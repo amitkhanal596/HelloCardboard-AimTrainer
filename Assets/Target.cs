@@ -1,0 +1,13 @@
+using UnityEngine;
+
+public class Target : MonoBehaviour
+{
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ball"))
+        {
+            GameManager.Instance.OnTargetHit();
+            Destroy(gameObject);
+        }
+    }
+}
